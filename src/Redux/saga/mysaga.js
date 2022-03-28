@@ -10,6 +10,7 @@ try {
         type: GET_DATA_S,
         payload: data 
     })
+    
   } catch (e) {
     console.log(e.message)
   }

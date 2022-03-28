@@ -1,18 +1,23 @@
-import { GET_DATA } from "../ActionType";
+import { GET_DATA , GET_DATA_S , GET_POST_S} from "../ActionType";
 const initialState = {
-    data:[]
+    data:[],
+    posts:[]
 }
 
 
 const reducer = (state = initialState ,action) =>{
-    console.log("action",action);
+    
     switch(action.type){
-        case GET_DATA :
-            var data_list = state.data;
-            data_list.push(action.payload)
+        case GET_DATA_S :
             return{
                 ...state,
-                data:[...data_list]
+                data:action.payload    
+            }
+            break;
+            case GET_POST_S :
+            return{
+                ...state,
+                posts:action.payload    
             }
             break;
             default :
